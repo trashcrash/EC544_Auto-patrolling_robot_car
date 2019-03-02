@@ -16,8 +16,10 @@ Write to shift register.
 void latch_tx(void)
 {
    unsigned char i;
-   //digitalWrite (MOTORENABLE, LOW);
-   digitalWrite (MOTORENABLE, HIGH);
+   digitalWrite (MOTORENABLE_1, HIGH);
+   digitalWrite (MOTORENABLE_2, HIGH);
+   digitalWrite (MOTORENABLE_3, HIGH);
+   digitalWrite (MOTORENABLE_4, HIGH);
    digitalWrite (MOTORLATCH, LOW);
 
    digitalWrite (MOTORDATA, LOW);
@@ -53,7 +55,10 @@ void latch_tx(void)
 int ControllerInit(void)
 {
 	wiringPiSetup () ;
-	pinMode(MOTORENABLE, OUTPUT);
+	pinMode(MOTORENABLE_1, OUTPUT);
+	pinMode(MOTORENABLE_2, OUTPUT);
+	pinMode(MOTORENABLE_3, OUTPUT);
+	pinMode(MOTORENABLE_4, OUTPUT);
 	pinMode(MOTORLATCH,  OUTPUT);
 	pinMode(MOTORDATA,   OUTPUT);
 	pinMode(MOTORCLK,    OUTPUT); 
@@ -71,6 +76,10 @@ void ControllerShutdown(void)
     DCMotorRun(2, RELEASE);
     DCMotorRun(3, RELEASE);
     DCMotorRun(4, RELEASE);
+    digitalWrite (MOTORENABLE_1, LOW);
+    digitalWrite (MOTORENABLE_2, LOW);
+    digitalWrite (MOTORENABLE_3, LOW);
+    digitalWrite (MOTORENABLE_4, LOW);
 
   // gpioTerminate();
    return;

@@ -12,7 +12,10 @@ typedef unsigned char uint8_t;
 
 #define MOTORLATCH      29
 #define MOTORCLK        28
-#define MOTORENABLE     21
+#define MOTORENABLE_1   21
+#define MOTORENABLE_2   22
+#define MOTORENABLE_3   23
+#define MOTORENABLE_4   24
 #define MOTORDATA       27
 
 #define MOTOR_1_PWM     5
