@@ -5,13 +5,13 @@ client = boto3.client('rekognition')
 response = client.start_label_detection(
     Video={
         'S3Object': {
-            'Bucket': 'Your_bucket',
+            'Bucket': 'ec544',
             'Name': 'test.mov'
         }
     },
     NotificationChannel={
-        'SNSTopicArn': 'Your_Topic_Arn',
-        'RoleArn': 'Your_Role_Arn'
+        'SNSTopicArn': 'YourSNSTopicArn',
+        'RoleArn': 'YourRoleArn'
     },
     JobTag='Test1'
 )
