@@ -15,3 +15,7 @@
 <img src="https://github.com/trashcrash/EC544_Auto-patrolling_robot_car/blob/master/Rekognition/images/AddUser_5.png"></br></br>
 **7.** The user is created after you've done your review. Don't forget to download the credentials. </br></br>
 <img src="https://github.com/trashcrash/EC544_Auto-patrolling_robot_car/blob/master/Rekognition/images/AddUser_6.png"></br></br>
+### Download and configure AWS CLI
+AWS Command Line Interface(CLI) is downloaded for simplifying the configuration process. </br>
+Install AWS CLI: ```$ pip install awscli --upgrade --user``` </br>
+Before the configuration, there's information needed. Go to AWS console -> IAM -> users, click your username and open "security credentials" tag</br></br>
