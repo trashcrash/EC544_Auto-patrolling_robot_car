@@ -19,3 +19,7 @@
 AWS Command Line Interface(CLI) is downloaded for simplifying the configuration process. </br>
 Install AWS CLI: ```$ pip install awscli --upgrade --user``` </br>
 Before the configuration, there's information needed. Go to AWS console -> IAM -> users, click your username and open "security credentials" tag</br></br>
+<img src="https://github.com/trashcrash/EC544_Auto-patrolling_robot_car/blob/master/Rekognition/images/Access_Key.png"></br></br>
+Click "create access key" and download the csv file generated. </br>
+Now you can open your terminal and enter ```aws configure``` </br>
+The access key ID and secret access key are in the csv file you just downloaded. The region format is like "us-east-1", find your region and enter correspondingly. The default output format can be "json", "text" or "table". Here we choose "json". 
