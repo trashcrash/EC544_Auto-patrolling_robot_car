@@ -24,4 +24,26 @@ Click "create access key" and download the csv file generated. </br>
 Now you can open your terminal and enter ```aws configure``` </br>
 The access key ID and secret access key are in the csv file you just downloaded. The region format is like "us-east-1", find your region and enter correspondingly. The default output format can be "json", "text" or "table". Here we choose "json".
 ### Create a role for SNS
-A role is needed to publish messages. Find and enter "role" in IAM, create a new role, and choose SNS service. </br>
+A role is needed to publish messages. Find and enter "role" in IAM, create a new role, and choose SNS service. </br></br>
+<img src="https://github.com/trashcrash/EC544_Auto-patrolling_robot_car/blob/master/Rekognition/images/AddRole_1.png"></br></br>
+Continue with the default settings, and enter the role name. </br></br>
+<img src="https://github.com/trashcrash/EC544_Auto-patrolling_robot_car/blob/master/Rekognition/images/AddRole_2.png"></br></br>
+### Create SNS topic
+The SNS service needs a topic to publish messages. Find and click "Simple Notification Service" in "services" dropdown menu, and create a topic. </br></br>
+<img src="https://github.com/trashcrash/EC544_Auto-patrolling_robot_car/blob/master/Rekognition/images/CreateSNSTopic_1.png"></br></br>
+Continue with the default settings, and enter the topic name. </br></br>
+<img src="https://github.com/trashcrash/EC544_Auto-patrolling_robot_car/blob/master/Rekognition/images/CreateSNSTopic_2.png"></br></br>
+### Activate AWS S3 buckets
+The test videos have to be uploaded to a bucket for Rekognition to analyze. Find S3 in "services" and create a bucket. </br></br>
+<img src="https://github.com/trashcrash/EC544_Auto-patrolling_robot_car/blob/master/Rekognition/images/CreateBucket_1.png"></br></br>
+### Get the arns
+Two arns are needed to start Rekognition service. Your role arn can be found at IAM -> Roles -> "Your role name". </br></br>
+The SNS topic arn can be found at Simple Notification Service -> Topics -> "Your topic name". </br></br>
+### Start rekognition
+The sample codes are provided here. </br>
+Before you execute the code, make sure you have AWS python SDK "boto3" installed. </br>
+Simply use pip in your terminal: ```pip install boto3```</br></br>
+```upload.py``` uploads your video or picture in the current directory to your bucket. </br>
+```start_reko.py``` starts the rekognition service. If success, it will return a **JobId**. Copy this value. </br>
+Paste the JobId to ```get_result.py```, and the result is saved in json format. </br>
+**Note that you need to replace some of the values in the files with your own values (bucket name, arns, video name, etc.)**
