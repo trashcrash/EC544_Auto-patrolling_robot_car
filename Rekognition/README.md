@@ -39,7 +39,7 @@ The test videos have to be uploaded to a bucket for Rekognition to analyze. Find
 ### Get the arns
 Two arns are needed to start Rekognition service. Your role arn can be found at IAM -> Roles -> "Your role name". </br></br>
 The SNS topic arn can be found at Simple Notification Service -> Topics -> "Your topic name". </br></br>
-### Start rekognition
+### Start rekognition with the sample code
 The sample codes are provided here. </br>
 Before you execute the code, make sure you have AWS python SDK "boto3" installed. </br>
 Simply use pip in your terminal: ```pip install boto3```</br></br>
